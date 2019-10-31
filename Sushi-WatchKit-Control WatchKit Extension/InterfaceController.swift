@@ -119,7 +119,10 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         
     }
     @IBAction func feedButtonPressed() {
-        
+        if(hungerCount > 12 && hungerCount<101){
+            hungerCount = hungerCount - 12
+            hunger.setText("\(hungerCount)")
+        }
         
     }
 }
