@@ -48,10 +48,10 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
                         }
         
         showTime.setText("\(name1)")
-//        if(Int(name1)! % 5 == 0 ){
-//            hungerCount = hungerCount+10
-//            hunger.setText("\(hungerCount)")
-//        }
+        if(Int(name1)! % 5 == 0 ){
+            hungerCount = hungerCount+10
+            hunger.setText("\(hungerCount)")
+        }
     }
 
    

@@ -71,7 +71,7 @@ class GameViewController: UIViewController,WCSessionDelegate {
            print("You pressed the caterpie button")
                  if(WCSession.default.isReachable == true){
                  //            Here is the message you want to send to the watch
-                             let message = ["name":"caterpie","name1":""]
+                             let message = ["name":"caterpie","name1":"4"]
                              WCSession.default.sendMessage(message, replyHandler: nil)
 
                              }
@@ -82,7 +82,7 @@ class GameViewController: UIViewController,WCSessionDelegate {
            print("You pressed the pikachu button")
                  if(WCSession.default.isReachable == true){
                  //            Here is the message you want to send to the watch
-                             let message = ["name":"pikachu","name1":"" ]
+                             let message = ["name":"pikachu","name1":"4" ]
                              WCSession.default.sendMessage(message, replyHandler: nil)
 
                              }
