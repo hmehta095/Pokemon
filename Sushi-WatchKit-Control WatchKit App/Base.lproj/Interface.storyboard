@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="15400" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch38"/>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="15400"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Sushi_WatchKit_Control_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <group width="1" alignment="left" id="Dyd-Lr-nyc">
+                            <items>
+                                <button alignment="left" title="Push " id="Lgq-aA-3ed">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="10"/>
+                                </button>
+                                <label height="20" alignment="left" text="Label" numberOfLines="2" id="lBZ-15-QV4">
+                                    <fontDescription key="font" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
+                                </label>
+                            </items>
+                        </group>
+                        <imageView width="47" height="47" alignment="center" image="pokeball" id="5Rd-6f-6WO"/>
+                        <label alignment="center" text="Albert is hungry" id="gx1-wZ-WNe">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                        <group width="1" alignment="left" id="Z6k-iL-Qdc">
+                            <items>
+                                <button alignment="center" title="N" id="SHA-Mb-bOh">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="nameButtonPressed" destination="AgC-eL-Hgc" id="Vbh-X0-wgv"/>
+                                    </connections>
+                                </button>
+                                <button alignment="center" title="S" id="K1B-GJ-FAe">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button alignment="center" title="F" id="5PD-CG-f8r">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                                <button alignment="center" title="H" id="UxH-9z-HO1">
+                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="font" type="system" pointSize="13"/>
+                                </button>
+                            </items>
+                        </group>
+                        <label alignment="center" text="HP: 100   Hunger: 0" id="zb7-bV-bN0">
+                            <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
+                        </label>
+                    </items>
+                    <connections>
+                        <outlet property="image" destination="5Rd-6f-6WO" id="ibz-Cp-R2M"/>
+                        <outlet property="name" destination="gx1-wZ-WNe" id="8NE-bC-uMs"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="129" y="116"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pokeball" width="64" height="64"/>
+    </resources>
+</document>
