@@ -12,11 +12,13 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
+    @IBOutlet weak var healthLabel: WKInterfaceLabel!
     @IBOutlet weak var showTime: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
     @IBOutlet weak var name: WKInterfaceLabel!
     
     var hungerCount:Int = 0
+    var health:Int = 100
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
    
@@ -52,6 +54,11 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             hungerCount = hungerCount+10
             hunger.setText("\(hungerCount)")
         }
+        if(hungerCount>80 && Int(name1)! % 5 == 0 ){
+            health = health - 5
+            healthLabel.setText("\(health)")
+        }
+        
     }
 
    
@@ -66,6 +73,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         // This method is called when watch view controller is about to be visible to user
         super.willActivate()
         print("---WATCH APP LOADED")
+        healthLabel.setText("100")
         if (WCSession.isSupported() == true) {
 //            msgFromPhoneLabel.setText("WC is supported!")
             
