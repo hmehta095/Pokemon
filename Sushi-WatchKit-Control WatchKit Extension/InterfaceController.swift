@@ -12,6 +12,7 @@ import WatchConnectivity
 
 
 class InterfaceController: WKInterfaceController,WCSessionDelegate {
+    @IBOutlet weak var showTime: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
     @IBOutlet weak var name: WKInterfaceLabel!
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
@@ -39,7 +40,8 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
 //                    self.nameLabel.setText("caterpie")
 
                         }
-       
+        
+        showTime.setText("\(name)")
     }
 
    
