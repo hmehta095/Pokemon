@@ -19,6 +19,7 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     
     var hungerCount:Int = 0
     var health:Int = 100
+    var hib:Bool = false
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
    
@@ -50,11 +51,11 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
                         }
         
         showTime.setText("\(name1)")
-        if(Int(name1)! % 5 == 0 && hungerCount < 101){
+        if(Int(name1)! % 5 == 0 && hungerCount < 101 && hib == false){
             hungerCount = hungerCount+10
             hunger.setText("\(hungerCount)")
         }
-        if(hungerCount>80 && Int(name1)! % 5 == 0 && health > 0){
+        if(hungerCount>80 && Int(name1)! % 5 == 0 && health > 0 && hib == false){
             health = health - 5
             healthLabel.setText("\(health)")
         }
@@ -109,20 +110,36 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
     }
     
-    @IBAction func gameStartPressed() {
-        if(WCSession.default.isReachable == true){
-        //            Here is the message you want to send to the watch
-            let message = ["name":"true"] as [String : Any]
-                   WCSession.default.sendMessage(message, replyHandler: nil)
-                   }
-        
-        
-    }
+//    @IBAction func gameStartPressed() {
+//        if(WCSession.default.isReachable == true){
+//        //            Here is the message you want to send to the watch
+//            let message = ["name":"true"] as [String : Any]
+//                   WCSession.default.sendMessage(message, replyHandler: nil)
+//                   }
+//
+//
+//    }
     @IBAction func feedButtonPressed() {
-        if(hungerCount > 12 && hungerCount<101){
+        if(hungerCount > 12 && hungerCount<101 && hib == false){
             hungerCount = hungerCount - 12
             hunger.setText("\(hungerCount)")
         }
         
+    }
+    
+    
+    @IBAction func hibernate() {
+
+        if(hib == false){
+            hib = true
+        }
+        
+    }
+    
+    @IBAction func unHibernate() {
+        
+                if(hib == true){
+                    hib = false
+                }
     }
 }
