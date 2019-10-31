@@ -43,6 +43,9 @@
                                 <button alignment="center" title="F" id="5PD-CG-f8r">
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="font" type="system" pointSize="13"/>
+                                    <connections>
+                                        <action selector="feedButtonPressed" destination="AgC-eL-Hgc" id="PAC-Rn-6to"/>
+                                    </connections>
                                 </button>
                                 <button alignment="center" title="H" id="UxH-9z-HO1">
                                     <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

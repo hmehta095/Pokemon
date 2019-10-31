@@ -50,11 +50,11 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
                         }
         
         showTime.setText("\(name1)")
-        if(Int(name1)! % 5 == 0 ){
+        if(Int(name1)! % 5 == 0 && hungerCount < 101){
             hungerCount = hungerCount+10
             hunger.setText("\(hungerCount)")
         }
-        if(hungerCount>80 && Int(name1)! % 5 == 0 ){
+        if(hungerCount>80 && Int(name1)! % 5 == 0 && health > 0){
             health = health - 5
             healthLabel.setText("\(health)")
         }
@@ -115,6 +115,10 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
             let message = ["name":"true"] as [String : Any]
                    WCSession.default.sendMessage(message, replyHandler: nil)
                    }
+        
+        
+    }
+    @IBAction func feedButtonPressed() {
         
         
     }
