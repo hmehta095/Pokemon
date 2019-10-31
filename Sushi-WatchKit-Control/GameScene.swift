@@ -32,6 +32,8 @@ class GameScene: SKScene, WCSessionDelegate {
         func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
             // Output message to terminal
             print("WATCH: I received a message: \(message)")
+            let name = message["name"] as! String
+            print(name)
 
           
 
@@ -68,7 +70,7 @@ class GameScene: SKScene, WCSessionDelegate {
             time = time + 1
             if(WCSession.default.isReachable == true){
             //            Here is the message you want to send to the watch
-                let message = ["name":"\(time)"] as [String : Any]
+                let message = ["name1":"\(time)","name": ""] as [String : Any]
                        WCSession.default.sendMessage(message, replyHandler: nil)
                        }
 

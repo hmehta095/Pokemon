@@ -23,13 +23,13 @@ class GameViewController: UIViewController,WCSessionDelegate {
     func sessionDidDeactivate(_ session: WCSession) {
         
     }
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        // Output message to terminal
-        print("WATCH: I received a message: \(message)")
-
-      
-
-    }
+//    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
+//        // Output message to terminal
+//        print("WATCH: I received a message: \(message)")
+//
+//      
+//
+//    }
     
 
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class GameViewController: UIViewController,WCSessionDelegate {
            print("You pressed the caterpie button")
                  if(WCSession.default.isReachable == true){
                  //            Here is the message you want to send to the watch
-                             let message = ["name":"caterpie"]
+                             let message = ["name":"caterpie","name1":""]
                              WCSession.default.sendMessage(message, replyHandler: nil)
 
                              }
@@ -82,7 +82,7 @@ class GameViewController: UIViewController,WCSessionDelegate {
            print("You pressed the pikachu button")
                  if(WCSession.default.isReachable == true){
                  //            Here is the message you want to send to the watch
-                             let message = ["name":"pikachu"]
+                             let message = ["name":"pikachu","name1":"" ]
                              WCSession.default.sendMessage(message, replyHandler: nil)
 
                              }

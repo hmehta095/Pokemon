@@ -53,8 +53,10 @@
                         <label alignment="center" text="HP: 100   Hunger: 0" id="zb7-bV-bN0">
                             <fontDescription key="font" style="UICTFontTextStyleCaption1"/>
                         </label>
+                        <label alignment="left" text="Hunger" id="zrz-yu-NGK"/>
                     </items>
                     <connections>
+                        <outlet property="hunger" destination="zrz-yu-NGK" id="Qa6-9c-2ho"/>
                         <outlet property="image" destination="5Rd-6f-6WO" id="ibz-Cp-R2M"/>
                         <outlet property="name" destination="gx1-wZ-WNe" id="8NE-bC-uMs"/>
                         <outlet property="showTime" destination="lBZ-15-QV4" id="0uz-wk-KAy"/>

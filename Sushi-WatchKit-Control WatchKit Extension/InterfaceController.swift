@@ -15,10 +15,14 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
     @IBOutlet weak var showTime: WKInterfaceLabel!
     @IBOutlet weak var image: WKInterfaceImage!
     @IBOutlet weak var name: WKInterfaceLabel!
+    
+    var hungerCount:Int = 0
+    
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
    
 }
-// Function to receive DICTIONARY from the watch
+    @IBOutlet weak var hunger: WKInterfaceLabel!
+    // Function to receive DICTIONARY from the watch
 
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         // Output message to terminal
@@ -27,6 +31,8 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         // Get the "name" key out of the dictionary
         // and show it in the label
         let name = message["name"] as! String
+        let name1 = message["name1"] as! String
+
         print(name)
         
          if(name == "pikachu"){
@@ -41,7 +47,11 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
                         }
         
-        showTime.setText("\(name)")
+        showTime.setText("\(name1)")
+//        if(Int(name1)! % 5 == 0 ){
+//            hungerCount = hungerCount+10
+//            hunger.setText("\(hungerCount)")
+//        }
     }
 
    
@@ -91,4 +101,13 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         }
     }
     
+    @IBAction func gameStartPressed() {
+        if(WCSession.default.isReachable == true){
+        //            Here is the message you want to send to the watch
+            let message = ["name":"true"] as [String : Any]
+                   WCSession.default.sendMessage(message, replyHandler: nil)
+                   }
+        
+        
+    }
 }
