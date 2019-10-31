@@ -35,8 +35,13 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         // and show it in the label
         let name = message["name"] as! String
         let name1 = message["name1"] as! String
+        let wake  = message["wake"] as! String
 
         print(name)
+
+        if(wake == "false"){
+           hib = false
+        }
         
          if(name == "pikachu"){
         //            pokemonImageView.setImage("pikachu")
@@ -50,8 +55,9 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
 
                         }
         
-        showTime.setText("\(name1)")
-        if(Int(name1)! % 5 == 0 && hungerCount < 101 && hib == false){
+        
+        if(Int(name1)! % 5 == 0 && hungerCount < 91 && hib == false){
+//            showTime.setText("\(name1)")
             hungerCount = hungerCount+10
             hunger.setText("\(hungerCount)")
         }
@@ -136,10 +142,4 @@ class InterfaceController: WKInterfaceController,WCSessionDelegate {
         
     }
     
-    @IBAction func unHibernate() {
-        
-                if(hib == true){
-                    hib = false
-                }
-    }
 }

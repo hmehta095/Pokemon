@@ -70,7 +70,7 @@ class GameScene: SKScene, WCSessionDelegate {
             time = time + 1
             if(WCSession.default.isReachable == true){
             //            Here is the message you want to send to the watch
-                let message = ["name1":"\(time)","name": ""] as [String : Any]
+                let message = ["name1":"\(time)","name": "", "wake": "true"] as [String : Any]
                        WCSession.default.sendMessage(message, replyHandler: nil)
                        }
 

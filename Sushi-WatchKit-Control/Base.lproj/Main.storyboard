@@ -24,6 +24,14 @@
                                     <action selector="CaterpieButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="K7F-Sm-I8Z"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P5u-vj-tB6">
+                                <rect key="frame" x="87" y="338" width="197" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="WAKE UP"/>
+                                <connections>
+                                    <action selector="wakeUpPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xAn-dN-wV4"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37p-J4-dL3">
                                 <rect key="frame" x="87" y="174" width="59" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
